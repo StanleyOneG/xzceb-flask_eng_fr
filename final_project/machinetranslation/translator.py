@@ -26,11 +26,19 @@ def englishToFrench(englishText):
     translation = language_translator.translate(
     text=englishText,
     model_id='en-fr').get_result()
-    # frenchText = json.dumps(translation, indent=2, ensure_ascii=False)
     frenchText = translation['translations'][0]['translation']
     return frenchText
 
+def frenchToEnglish(frenchText):
+    """
+    This function translates passed French text to English
+    """
+    translation = language_translator.translate(
+    text=frenchText,
+    model_id='fr-en').get_result()
+    englishText = translation['translations'][0]['translation']
+    return englishText
 
 
 if __name__ == "__main__":
-    print(englishToFrench('Hello, my name is Anon'))
+    pass
